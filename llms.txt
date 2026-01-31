@@ -1,0 +1,147 @@
+# match-first
+
+> Return the first value whose condition evaluates to true.
+
+## Overview
+
+`match-first` is a lightweight TypeScript utility for conditional value selection. It evaluates an array of condition-value pairs and returns the value of the first matching condition, with a fallback option when no conditions are met.
+
+## Installation
+
+```bash
+npm install @jswork/match-first
+# or
+yarn add @jswork/match-first
+# or
+pnpm add @jswork/match-first
+# or
+bun add @jswork/match-first
+```
+
+## Quick Start
+
+```typescript
+import matchFirst from '@jswork/match-first';
+
+const result = matchFirst(
+  [
+    { condition: isHotfix, value: `hotfix ${id}` },
+    { condition: taskType === 'bug', value: `bugfix ${id}` }
+  ],
+  `start ${id}`
+);
+```
+
+## API
+
+### `matchFirst<T>(cases, fallback)`
+
+Returns the first value whose condition evaluates to true.
+
+**Type Parameters:**
+- `T` - The type of values being matched
+
+**Parameters:**
+- `cases: ConditionValuePair<T>[]` - An array of condition-value pairs
+- `fallback: T` - The value to return if no conditions match
+
+**Returns:** `T` - The first matching value or the fallback
+
+**Type Definition:**
+```typescript
+type ConditionValuePair<T> = {
+  condition: boolean;
+  value: T;
+};
+```
+
+## Use Cases
+
+1. **Conditional Branching** - Replace nested if-else or switch statements
+2. **Configuration Selection** - Choose environment-specific configs
+3. **Feature Flags** - Return values based on feature availability
+4. **A/B Testing** - Select content based on experiment conditions
+5. **User Roles** - Return role-specific values
+
+## Examples
+
+### Environment Configuration
+
+```typescript
+const config = matchFirst(
+  [
+    { condition: env === 'prod', value: { apiUrl: 'https://api.prod.com' } },
+    { condition: env === 'staging', value: { apiUrl: 'https://api.staging.com' } }
+  ],
+  { apiUrl: 'http://localhost:3000' }
+);
+```
+
+### Size Classification
+
+```typescript
+const size = matchFirst(
+  [
+    { condition: x > 100, value: 'extra-large' },
+    { condition: x > 50, value: 'large' },
+    { condition: x > 10, value: 'medium' }
+  ],
+  'small'
+);
+```
+
+### Theme Selection
+
+```typescript
+const theme = matchFirst(
+  [
+    { condition: userPreference === 'dark', value: darkTheme },
+    { condition: systemPreference === 'dark', value: darkTheme }
+  ],
+  lightTheme
+);
+```
+
+## Features
+
+- **TypeScript Support** - Full type safety with generics
+- **Zero Dependencies** - No external dependencies
+- **Tree Shakable** - Minimal bundle size impact
+- **Framework Agnostic** - Works with any TypeScript/JavaScript project
+
+## Project Structure
+
+```
+match-first/
+├── src/
+│   └── index.ts          # Main implementation
+├── __tests__/
+│   └── index.spec.ts     # Test suite
+├── assets/
+│   └── logo.svg          # Project logo
+├── dist/                 # Build output (generated)
+└── package.json
+```
+
+## Development
+
+```bash
+# Run tests
+bun test
+
+# Build
+npm run build
+
+# Release
+npm run release
+```
+
+## Links
+
+- **Repository**: https://github.com/afeiship/match-first
+- **NPM**: https://npmjs.org/package/@jswork/match-first
+- **Homepage**: https://js.work
+
+## License
+
+MIT
