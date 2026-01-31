@@ -1,6 +1,6 @@
 /**
  * A condition-value pair used for pattern matching.
- *
+ * AI: https://chat.qwen.ai/c/0bd59e31-a69c-4543-912c-8bd1ec61af9f
  * @template T - The type of the value to be returned if the condition is true
  */
 export type ConditionValuePair<T> = {
