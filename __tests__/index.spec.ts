@@ -1,4 +1,4 @@
-import { matchFirst } from '../src';
+import matchFirst from '../src';
 
 describe('matchFirst', () => {
   describe('should return first matching value', () => {

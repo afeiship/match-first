@@ -18,7 +18,7 @@ yarn add @jswork/match-first
 
 ## usage
 ```ts
-import { matchFirst } from '@jswork/match-first';
+import matchFirst from '@jswork/match-first';
 
 // Basic example: return first matching value
 const result = matchFirst(
