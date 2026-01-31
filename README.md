@@ -16,6 +16,9 @@
 yarn add @jswork/match-first
 ```
 
+## use ai
+> https://raw.githubusercontent.com/afeiship/match-first/refs/heads/main/llms.txt
+
 ## usage
 ```ts
 import matchFirst from '@jswork/match-first';
