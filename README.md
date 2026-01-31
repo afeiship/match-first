@@ -1,5 +1,10 @@
-# match-first
-> Return the first value whose condition evaluates to true.
+<p align="center">
+  <img src="assets/logo.svg" width="120" alt="match-first logo" />
+</p>
+
+<h1 align="center">match-first</h1>
+
+<p align="center">Return the first value whose condition evaluates to true.</p>
 
 [![version][version-image]][version-url]
 [![license][license-image]][license-url]
