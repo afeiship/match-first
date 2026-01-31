@@ -16,19 +16,19 @@ Create visual metaphors for:
 - **Selection**: Checkmarks, highlighted paths, first match emphasis
 - **Fallback**: Default route, safety net, base case
 
-### 3. Generate SVG Logo
-- Create `assets/logo.svg` with modern, clean design
+### 3. Generate SVG Banner
+- Create `assets/logo.svg` as horizontal banner for GitHub
 - Use scalable vector graphics for crisp rendering at any size
 - Include:
-  - Project name or initial letter
-  - Visual representation of condition matching
-  - Color scheme: Blue/Purple gradient (primary), Green (success), Gray (fallback)
+  - **Left side**: Logo icon with branching flow visualization
+  - **Right side**: Project name, tagline, and feature badges
+  - Color scheme: Dark background (#0f172a), Blue/Purple gradient, Green accents
   - Subtle shadows for depth
 
 ### 4. Validate
 - Ensure SVG is valid and renders correctly
-- Test at different sizes (64px, 128px, 256px)
-- Verify it looks good in README dark/light modes
+- Test in both dark and light GitHub themes
+- Verify text is readable and layout is balanced
 
 ## Design Guidelines
 
@@ -36,21 +36,43 @@ Create visual metaphors for:
 |--------|---------------|
 | **Format** | SVG (scalable vector) |
 | **Location** | `assets/logo.svg` |
-| **ViewBox** | 240x240 for versatility |
+| **Dimensions** | 1000x240 (GitHub banner standard) |
+| **Background** | Dark (#0f172a) for GitHub compatibility |
 | **Primary Color** | Blue to Purple gradient (#3b82f6 → #8b5cf6) |
 | **Success Color** | Green gradient (#22c55e → #10b981) |
-| **Style** | Modern flat with subtle shadows |
-| **Background** | Light (#f8fafc) for contrast |
+| **Text Color** | White/light gray (#94a3b8) |
+| **Style** | Modern dark theme with subtle shadows |
+
+## Layout Structure
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  [ICON]            match-first                              │
+│                     Tagline description                      │
+│                     [TypeScript] [Zero Dep] [Tiny]          │
+└─────────────────────────────────────────────────────────────┘
+```
 
 ## Visual Elements
-- **Starting point**: Circle at top (input)
-- **Branching lines**: Paths representing condition evaluation
-- **First match**: Green checkmark with "1st" label
-- **Non-matches**: Gray/dimmed branches with X marks
-- **Fallback path**: Bottom "default" box
+- **Left (200px)**: Logo icon
+  - Starting point circle
+  - Branching lines (first match highlighted, others dimmed)
+  - Green checkmark for first match
+  - Gray X marks for non-matches
+  - "default" box for fallback
+- **Right (800px)**: Content
+  - Project name (large, gradient)
+  - Tagline (medium, light gray)
+  - Feature badges (small, outlined)
+
+## Feature Badges
+Common badges to include:
+- **TypeScript** - Type safety
+- **Zero Dep** - No dependencies
+- **Tiny** - Small bundle size
 
 ## Example Usage
 ```bash
 # Given: Project "match-first" for conditional value selection
-# Generate: assets/logo.svg showing branching logic with first match highlighted
+# Generate: assets/logo.svg - 1000x240 dark banner with icon + text
 ```

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 240" width="1000" height="240">
   <defs>
     <linearGradient id="primary" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#3b82f6"/>
@@ -14,46 +14,58 @@
   </defs>
 
   <!-- Background -->
-  <rect x="20" y="20" width="200" height="200" rx="40" fill="#f8fafc"/>
+  <rect width="1000" height="240" fill="#0f172a"/>
 
-  <!-- Main title text -->
-  <text x="120" y="55" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#64748b" text-anchor="middle">match-first</text>
+  <!-- Left side: Logo icon -->
+  <g transform="translate(60, 40)">
+    <!-- Branch lines -->
+    <g stroke-linecap="round">
+      <line x1="80" y1="20" x2="80" y2="50" stroke="url(#primary)" stroke-width="6"/>
+      <line x1="80" y1="50" x2="40" y2="90" stroke="url(#success)" stroke-width="6"/>
+      <line x1="80" y1="50" x2="120" y2="90" stroke="#475569" stroke-width="4" stroke-dasharray="10 6"/>
+      <line x1="80" y1="50" x2="80" y2="150" stroke="#475569" stroke-width="4"/>
+    </g>
 
-  <!-- Branch lines -->
-  <g stroke-linecap="round">
-    <!-- Main vertical line -->
-    <line x1="120" y1="80" x2="120" y2="110" stroke="url(#primary)" stroke-width="4"/>
+    <!-- First match node -->
+    <g transform="translate(40, 90)">
+      <circle r="24" fill="url(#success)" filter="url(#shadow)"/>
+      <path d="M -8 -2 L -3 6 L 8 -8" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
 
-    <!-- Branch to left (first match) -->
-    <line x1="120" y1="110" x2="70" y2="140" stroke="url(#success)" stroke-width="4"/>
+    <!-- No match node -->
+    <g transform="translate(120, 90)">
+      <circle r="16" fill="#334155"/>
+      <path d="M -6 -6 L 6 6 M 6 -6 L -6 6" stroke="#64748b" stroke-width="4" stroke-linecap="round"/>
+    </g>
 
-    <!-- Branch to right (no match) -->
-    <line x1="120" y1="110" x2="170" y2="140" stroke="#cbd5e1" stroke-width="3" stroke-dasharray="8 4"/>
+    <!-- Fallback node -->
+    <g transform="translate(80, 150)">
+      <rect x="-28" y="-16" width="56" height="32" rx="8" fill="#475569" filter="url(#shadow)"/>
+      <text y="6" font-family="Arial" font-size="12" fill="white" text-anchor="middle">default</text>
+    </g>
 
-    <!-- Continue line (fallback) -->
-    <line x1="120" y1="110" x2="120" y2="190" stroke="#94a3b8" stroke-width="3"/>
+    <!-- Start point -->
+    <circle cx="80" cy="20" r="10" fill="url(#primary)"/>
   </g>
 
-  <!-- Branch nodes -->
-  <!-- First match - Green checkmark -->
-  <g transform="translate(70, 140)">
-    <circle r="18" fill="url(#success)" filter="url(#shadow)"/>
-    <path d="M -6 -2 L -2 4 L 6 -6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    <text y="38" font-family="monospace" font-size="12" fill="#22c55e" text-anchor="middle" font-weight="bold">1st</text>
-  </g>
+  <!-- Right side: Title and description -->
+  <g transform="translate(220, 100)">
+    <!-- Main title -->
+    <text font-family="Arial, sans-serif" font-size="56" font-weight="bold" fill="url(#primary)">match-first</text>
 
-  <!-- No match - Gray X -->
-  <g transform="translate(170, 140)">
-    <circle r="14" fill="#e2e8f0"/>
-    <path d="M -5 -5 L 5 5 M 5 -5 L -5 5" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
-  </g>
+    <!-- Tagline -->
+    <text x="0" y="45" font-family="Arial, sans-serif" font-size="20" fill="#94a3b8">Return the first value whose condition evaluates to true</text>
 
-  <!-- Fallback - Default box -->
-  <g transform="translate(120, 190)">
-    <rect x="-22" y="-12" width="44" height="24" rx="6" fill="#64748b" filter="url(#shadow)"/>
-    <text y="5" font-family="Arial" font-size="10" fill="white" text-anchor="middle">default</text>
-  </g>
+    <!-- Feature badges -->
+    <g transform="translate(0, 80)">
+      <rect x="0" y="-16" width="90" height="32" rx="16" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+      <text x="45" y="5" font-family="monospace" font-size="13" fill="#3b82f6" text-anchor="middle">TypeScript</text>
 
-  <!-- Starting point -->
-  <circle cx="120" cy="80" r="8" fill="url(#primary)"/>
+      <rect x="105" y="-16" width="70" height="32" rx="16" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+      <text x="140" y="5" font-family="monospace" font-size="13" fill="#22c55e" text-anchor="middle">Zero Dep</text>
+
+      <rect x="185" y="-16" width="80" height="32" rx="16" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+      <text x="225" y="5" font-family="monospace" font-size="13" fill="#8b5cf6" text-anchor="middle">Tiny</text>
+    </g>
+  </g>
 </svg>

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.svg" width="120" alt="match-first logo" />
+  <img src="assets/logo.svg" width="1024" alt="match-first logo" />
 </p>
 
 <h1 align="center">match-first</h1>
