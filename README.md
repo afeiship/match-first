@@ -12,12 +12,35 @@ yarn add @jswork/match-first
 ```
 
 ## usage
-```js
-import matchFirst from '@jswork/match-first';
+```ts
+import { matchFirst } from '@jswork/match-first';
 
-matchFirst(1024);
+// Basic example: return first matching value
+const result = matchFirst(
+  [
+    { condition: isHotfix, value: `hotfix ${id}` },
+    { condition: taskType === 'bug', value: `bugfix ${id}` }
+  ],
+  `start ${id}`
+);
 
-// [1000, 0, 20, 4]
+// Conditional branching with fallback
+const size = matchFirst(
+  [
+    { condition: x > 10, value: 'large' },
+    { condition: x > 5, value: 'medium' }
+  ],
+  'small'
+);
+
+// Different value types
+const config = matchFirst(
+  [
+    { condition: env === 'prod', value: { apiUrl: 'https://api.prod.com' } },
+    { condition: env === 'staging', value: { apiUrl: 'https://api.staging.com' } }
+  ],
+  { apiUrl: 'http://localhost:3000' }
+);
 ```
 
 ## license
